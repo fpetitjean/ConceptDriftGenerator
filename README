@@ -1,4 +1,8 @@
 This project is a complement to the Massive Online Analysis (MOA) library and aims 
 at providing a categorical data generator with given magnitude. 
 
+It is provided as support to the following paper: 
+G. Webb, R. Hyde, H. Cao, H. Nguyen and F. Petitjean, “Characterizing Concept Drift,” Data Mining and Knowledge Discovery, in press, 2016.
+Please use this paper as reference if you use the code. 
+
 It requires the Apache Commons Math for random number generators.   
