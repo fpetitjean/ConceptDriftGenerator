@@ -1,0 +1,4 @@
+This project is a complement to the Massive Online Analysis (MOA) library and aims 
+at providing a categorical data generator with given magnitude. 
+
+It requires the Apache Commons Math for random number generators.   
