@@ -71,21 +71,19 @@ public abstract class CategoricalDriftGenerator extends AbstractOptionHandler im
     }
 
     public static void generateRandomPyGivenX(double[][] pygx, RandomDataGenerator r) {
-	generateRandomPyGivenX(pygx, r,1.0);
-    }
-    
-    public static void generateRandomPyGivenX(double[][] pygx, RandomDataGenerator r,double alphaDirichlet) {
 	for (int i = 0; i < pygx.length; i++) {
 	    double[] lineCPT = pygx[i];
-	    double sum=0;
+	    int chosenClass = r.nextSecureInt(0, lineCPT.length - 1);
+
 	    for (int c = 0; c < lineCPT.length; c++) {
-		lineCPT[c] = r.nextGamma(alphaDirichlet, 1.0);
-		sum+=lineCPT[c];
-	    }
-	    for (int c = 0; c < lineCPT.length; c++) {
-		lineCPT[c] /= sum;
+		if (c == chosenClass) {
+		    lineCPT[c] = 1.0;
+		} else {
+		    lineCPT[c] = 0.0;
+		}
 	    }
 	}
+
     }
     
     public static void generateRandomPx(double[][] px, RandomDataGenerator r) {
